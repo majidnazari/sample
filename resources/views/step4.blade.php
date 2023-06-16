@@ -22,7 +22,7 @@
                     <th>موجودی</th>
                 </tr>
                 </thead>
-                <tr>
+                {{-- <tr>
                     <td>&nbsp;</td>
                     <td></td>
                     <td></td>
@@ -37,7 +37,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                </tr>
+                </tr> --}}
             </table>
 
             <div style="text-align:left;">

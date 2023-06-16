@@ -9,8 +9,14 @@ class User_Attributes extends Model
 {
     use HasFactory;
     protected $table = "user_attributes";
-    protected $fillable = ['user_id', 'attributes'];
-    protected $casts = ['attributes' => 'array'];
+    protected $fillable = [
+        'user_id',
+        'age',
+        'mobile',
+        'city',
+        // 'attributes'
+        ];
+    //protected $casts = ['attributes' => 'array'];
 
     public function user()
     {
