@@ -14,6 +14,15 @@ class User_Attributes extends Model
         'age',
         'mobile',
         'city',
+        'country',
+        'address',
+        'address2',
+        'last_visit_at',
+        'last_visit_timezone_type',
+        'last_visit_timezone',
+        'credit',
+        'gender'
+
         // 'attributes'
         ];
     //protected $casts = ['attributes' => 'array'];

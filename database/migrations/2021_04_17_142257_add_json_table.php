@@ -17,13 +17,15 @@ class AddJsonTable extends Migration
            $table->id();
            $table->bigInteger('user_id');
             $table->integer('age');
-            $table->string('mobile');
+            $table->string('mobile')->index();
             $table->string('city');
             $table->string('country');
-            $table->string('address');
-            $table->string('address2');
-            $table->timestamp('last_visit');
-            $table->bigInteger('credit');
+            $table->string('address')->index();
+            $table->string('address2')->index();
+            $table->string('last_visit_at');
+            $table->integer('last_visit_timezone_type');
+            $table->string('last_visit_timezone');
+            $table->bigInteger('credit')->index();
             $table->boolean('gender');
             $table->timestamps();
 

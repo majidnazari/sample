@@ -22,5 +22,5 @@ Route::view('/step6', 'step6')->name('step6');
 Route::get('/result', 'IsTestController@result')->name('result');
 Route::get('/export', 'IsTestController@export')->name('export');
 
-Route::get ('/user-attribute', 'UserAttributesController@index')->name('useratributes.index');
+Route::get ('/user-attribute', 'UserAttributesController@index')->name('userattributes.index');
 

@@ -30,13 +30,15 @@ class User_AttributesFactory extends Factory
         //     ]
         // ];
         return [
-            'age' => rand(12, 45),
+                'age' => rand(12, 45),
                 'mobile' => $this->faker->phoneNumber,
                 'city' => $this->faker->city,
                 'country' => $this->faker->country,
                 'address' => $this->faker->address,
                 'address2' => $this->faker->address,
-                'last_visit' => $this->faker->dateTime,
+                'last_visit_at' => $this->faker->dateTime,
+                'last_visit_timezone_type' => 3,
+                'last_visit_timezone' => "UTC",
                 'credit' => rand(0, 1000000000),
                 'gender' => rand(0, 1),
 

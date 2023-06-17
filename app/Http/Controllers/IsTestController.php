@@ -18,19 +18,21 @@ class IsTestController extends Controller
 
     public function step3()
     {
-        // $users = User::query()
-        //     ->leftJoin('user_attributes as ua', 'ua.user_id', '=', 'users.id')
-        //     ->where('users.name', 'like', 'Dr.%')
-        //     ->where('ua.attributes', 'regexp', '\"mobile\"\:\"\+1[0-9-]+"')
-        //     ->orderByRaw('substr(ua.attributes, 5, 10) desc');
-        //     //dd($users->count());
+        //$users = User::query()
+            // ->leftJoin('user_attributes as ua', 'ua.user_id', '=', 'users.id')
+            // ->where('users.name', 'like', 'Dr.%')
+            // ->where('ua.mobile', 'regexp', '\+1[0-9-]+');
+            // //->where('ua.attributes', 'regexp', '\"mobile\"\:\"\+1[0-9-]+"')
+            // //->orderByRaw('substr(ua.attributes, 5, 10) desc');
+            // dd($users->count());
 
+        
         $users = User::where('name','like','Dr.%')
         ->whereHas('attributes',function($query){
-            $query->whereRaw('mobile regexp "1[0-9-]+"');
+            $query->where('mobile', 'regexp', "\+1[0-9-]+");
         })
         ->with('attributes');
-       //dd( $users);
+        //dd( $users->count());
         // ->leftJoin('user_attributes as ua', 'ua.user_id', '=', 'users.id')
         // ->where('users.name', 'like', 'Dr.%')
         // ->where('ua.attributes', 'regexp', '\"mobile\"\:\"\+1[0-9-]+"')
