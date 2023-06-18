@@ -2,42 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\InvoicesExport;
 use App\Models\User;
 use Illuminate\Support\Facades\File;
 use ZanySoft\Zip\Zip;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\UsersExport;
+use Illuminate\Support\Facades\Storage;
 
 class IsTestController extends Controller
 {
-    public function export()
-    {   
-        return Excel::download(new UsersExport,"allUser.xlsx");
-        //return "Export all user in here";
+    public function startExport()
+    {
+        (new InvoicesExport)->queue('invoices.xlsx');
+        return "Export all user in here";
+    }
+
+    public function checkExport()
+    {
+        if (Storage::disk('local')->has('invoices.xlsx')) {
+            return Storage::disk('local')->download('invoices.xlsx');
+        }
+        return 'ongoing';
     }
 
     public function step3()
     {
         //$users = User::query()
-            // ->leftJoin('user_attributes as ua', 'ua.user_id', '=', 'users.id')
-            // ->where('users.name', 'like', 'Dr.%')
-            // ->where('ua.mobile', 'regexp', '\+1[0-9-]+');
-            // //->where('ua.attributes', 'regexp', '\"mobile\"\:\"\+1[0-9-]+"')
-            // //->orderByRaw('substr(ua.attributes, 5, 10) desc');
-            // dd($users->count());
+        // ->leftJoin('user_attributes as ua', 'ua.user_id', '=', 'users.id')
+        // ->where('users.name', 'like', 'Dr.%')
+        // ->where('ua.mobile', 'regexp', '\+1[0-9-]+');
+        // //->where('ua.attributes', 'regexp', '\"mobile\"\:\"\+1[0-9-]+"')
+        // //->orderByRaw('substr(ua.attributes, 5, 10) desc');
+        // dd($users->count());
 
-        
-        $users = User::where('name','like','Dr.%')
-        ->whereHas('attributes',function($query){
-            $query->where('mobile', 'regexp', "\+1[0-9-]+");
-        })
-        ->with('attributes');
+
+        $users = User::where('name', 'like', 'Dr.%')
+            ->whereHas('attributes', function ($query) {
+                $query->where('mobile', 'regexp', "\+1[0-9-]+");
+            })
+            ->with('attributes');
         //dd( $users->count());
         // ->leftJoin('user_attributes as ua', 'ua.user_id', '=', 'users.id')
         // ->where('users.name', 'like', 'Dr.%')
         // ->where('ua.attributes', 'regexp', '\"mobile\"\:\"\+1[0-9-]+"')
         // ->orderByRaw('substr(ua.attributes, 5, 10) desc');
-        
+
 
         $sql = $users->toSql();
 
