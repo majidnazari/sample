@@ -11,15 +11,9 @@ class UserAttributesController extends Controller
 {
     public function index(Request $request)
     {       
-        if ($request->ajax()) {   
-            
-                        //$data = User::select('id','name','email');
+        if ($request->ajax()) { 
            $data = User_Attributes::with('user'); 
-            // return \Yajra\DataTables\DataTables::eloquent( $data)
-            // ->addColumn('attributes', function (User $user) {
-            //      //return $user->attributes;
-            // })
-            // ->make(true);           
+                    
             return \Yajra\DataTables\DataTables::of($data)
                     ->addIndexColumn()
                     // ->addColumn('action', function($row){

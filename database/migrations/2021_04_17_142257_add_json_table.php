@@ -22,7 +22,7 @@ class AddJsonTable extends Migration
             $table->string('country');
             $table->string('address')->index();
             $table->string('address2')->index();
-            $table->string('last_visit_at');
+            $table->dateTime('last_visit_at');
             $table->integer('last_visit_timezone_type');
             $table->string('last_visit_timezone');
             $table->bigInteger('credit')->index();

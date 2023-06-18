@@ -20,8 +20,9 @@ Route::view('/step4', 'step4')->name('step4');
 Route::view('/step5', 'step5')->name('step5');
 Route::view('/step6', 'step6')->name('step6');
 Route::get('/result', 'IsTestController@result')->name('result');
-Route::get('/start-export', 'IsTestController@startExport')->name('start-export');
+Route::get('/export', 'IsTestController@Export')->name('export');
 Route::get('/check-export', 'IsTestController@checkExport')->name('check-export');
+Route::get("/checkExcelFile",'IsTestController@AJAXcheckExport')->name('AJAX-check-export');
 
 Route::get ('/user-attribute', 'UserAttributesController@index')->name('userattributes.index');
 

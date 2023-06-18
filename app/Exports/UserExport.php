@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithCustomChunkSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class InvoicesExport implements  FromQuery , WithHeadings, WithCustomChunkSize
+class UserExport implements  FromQuery , WithHeadings, WithCustomChunkSize
 {
     use Exportable;
 
@@ -18,14 +18,17 @@ class InvoicesExport implements  FromQuery , WithHeadings, WithCustomChunkSize
             '#',
             'name',
             'email',
+            'email_verified_at',
+            'created_at',
+            'updated_at',
         ];
     }
 
     public function query()
     {
+        //ini_set('max_execution_time', 600);
         return User::query();
     }
-
     public function chunkSize(): int
     {
         return 10000;

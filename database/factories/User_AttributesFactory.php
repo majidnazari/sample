@@ -36,9 +36,9 @@ class User_AttributesFactory extends Factory
                 'country' => $this->faker->country,
                 'address' => $this->faker->address,
                 'address2' => $this->faker->address,
-                'last_visit_at' => $this->faker->dateTime,
+                'last_visit_at' => $this->faker->dateTime(),
                 'last_visit_timezone_type' => 3,
-                'last_visit_timezone' => "UTC",
+                'last_visit_timezone' => $this->faker->timezone(),
                 'credit' => rand(0, 1000000000),
                 'gender' => rand(0, 1),
 
