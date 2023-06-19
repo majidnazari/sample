@@ -9,6 +9,11 @@ use Yajra\DataTables\DataTables;
 
 class UserAttributesController extends Controller
 {
+    /**
+     * Summary of index: get column names of table and sent it to front-end side 
+     * @param \Illuminate\Http\Request $request
+     * @return mixed
+     */
     public function index(Request $request)
     {       
         if ($request->ajax()) { 
