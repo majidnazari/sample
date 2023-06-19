@@ -12,7 +12,7 @@ class IsTestController extends Controller
 {
     public function Export()
     {       
-        (new UserExport)->queue('users.xlsx');
+        (new UserExport)->queue('users.xlsx'); //it can be dynamic like: $user->name.xlsx
         return "Export all user is in progressing";
     }
 

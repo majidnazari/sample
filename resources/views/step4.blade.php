@@ -1,4 +1,5 @@
 
+       
 
 @extends("welcome")
 @section('content')
@@ -13,7 +14,8 @@
             اگه با دقت دیتابیس رو نگاه کنی یک جدول میبینی به اسم user_attributes که ازت میخوام محتوای اون جدول رو در پایین صفحه نشون بدی و امکان سرچ در اون جدول داشته باشیم. بصورت ajax.<br>
             برای اینکار حتما از datatable یا یه ابزار خوب استفاده کن تا خیلی وقتتو نگیره. فقط سرچ تو ستون های جدول خیلی مهمه پس یادت نره.<br><br>
 
-            <table id="myTable" class="table table-bordered">
+     <div id="data_report">
+         <table id="myTable" class="table table-bordered">  
                 <thead>
                 <tr>
                     <th>شماره کاربر</th>
@@ -43,7 +45,10 @@
                     <td></td>
                     <td></td>
                 </tr>
-            </table>
+          </table>
+
+     </div>  
+          
 
             <div style="text-align:left;">
                 <a class="next-lvl" href="{{ route('step5') }}">
@@ -54,6 +59,7 @@
     </div>
 @endsection
 
+    
 
 
 
