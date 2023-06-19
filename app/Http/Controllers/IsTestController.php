@@ -66,7 +66,7 @@ class IsTestController extends Controller
 
         //     }]); 
 
-        $users = $this->makeQuery(new User, "name,like,Dr.%", 'attributes', "mobile,regexp,\+1[0-9-]+", "mobile,desc");
+        $users = $this->makeQueryBuilder(new User, "name,like,Dr.%", 'attributes', "mobile,regexp,\+1[0-9-]+", "mobile,desc");
        
         $sql = $users->toSql();
 
@@ -85,7 +85,7 @@ class IsTestController extends Controller
      * @param mixed $withColumnOrderBy //codition of order by 
      * @return mixed
      */
-    public function makeQuery($model, $mainParam, $withRelations, $withParam, $withColumnOrderBy)
+    public function makeQueryBuilder($model, $mainParam, $withRelations, $withParam, $withColumnOrderBy)
     {
         $mainWhere = explode(",", $mainParam); 
         $withWhere = explode(",", $withParam); 

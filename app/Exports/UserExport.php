@@ -25,8 +25,7 @@ class UserExport implements  FromQuery , WithHeadings, WithCustomChunkSize
     }
 
     public function query()
-    {
-        //ini_set('max_execution_time', 600);
+    {        
         return User::query();
     }
     public function chunkSize(): int

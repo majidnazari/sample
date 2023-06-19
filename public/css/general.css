@@ -2,3 +2,9 @@
 #data_report{
     direction: ltr;
 }
+#result{
+    color: #62ac02;
+}
+#not_found_user{
+    color: brown;
+}

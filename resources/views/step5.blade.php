@@ -11,7 +11,17 @@
             <pre style="direction:ltr">https://refactoring.guru/design-patterns/chain-of-responsibility</pre>
             میخوام با توجه به امکانات لاراول از این پترن استفاده کنی و کاربرایی که کشورشون ایرانه، به اعتبارشون اضافه کنی.
             فقط حتما لینک رو مطالعه کن و با توجه به چیزی که از لینک متوجه شدی و امکانات لاراول این مورد رو پیاده کن.
+        <div id="result"><h6><b>
+            @if($errors->any())
+               <span id="not_found_user"> {{$errors->first()}} </span>
+            @else
+                @isset($msg)
+                    {{ $msg }}
+                @endisset              
 
+            @endif
+        </b></h6>
+        </div>
             <div style="text-align:left;">
                 <a class="next-lvl" href="{{ route('step6') }}">
                     مرحله بعد

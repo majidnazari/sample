@@ -26,3 +26,5 @@ Route::get("/checkExcelFile",'IsTestController@AJAXcheckExport')->name('AJAX-che
 
 Route::get ('/user-attribute', 'UserAttributesController@index')->name('userattributes.index');
 
+Route::get('/iranian-user/{user}', 'UserAttributesController@AddCredit')->middleware('IsIranian');
+
