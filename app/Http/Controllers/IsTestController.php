@@ -49,7 +49,7 @@ class IsTestController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function step3()
-    {
+    {        
         //$users = User::query()
         // ->leftJoin('user_attributes as ua', 'ua.user_id', '=', 'users.id')
         // ->where('users.name', 'like', 'Dr.%')

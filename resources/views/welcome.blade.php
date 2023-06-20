@@ -6,7 +6,7 @@
 
         <title>پروژه تست</title>
 
-        <link href='http://awebfont.ir/css?id=1069' rel='stylesheet' type='text/css'>
+        <!-- <link href='http://awebfont.ir/css?id=1069' rel='stylesheet' type='text/css'> -->
 
         <!-- Styles -->
         <style>
