@@ -19,8 +19,7 @@ class QueryTest extends TestCase
      * @return void
      */
     public function test_makeQuery()
-    {
-        $request = new Request;
+    {        
         $user = User::whereHas('attributes', function ($query) {
             $query->where('country', 'like', 'Iran');
         })
