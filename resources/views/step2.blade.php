@@ -25,23 +25,5 @@
     </div>
 @endsection
 
-<script type="text/javascript">
- 
-    setInterval(checkExcelFile, 10000);
-    function checkExcelFile(){ 
-        $.ajax({
-               type:'GET',
-               url:"{{ route('AJAX-check-export') }}",             
-               success:function(response)
-                {
-                    if(response==="available")
-                    {
-                         window.location.href ="{{ route('check-export') }}";                       
-                    } 
-                },
-                error: function(response) {
-                    }
-            });
-        }
-</script>
+
 

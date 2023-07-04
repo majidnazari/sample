@@ -24,7 +24,7 @@ class IsTestController extends Controller
      * Summary of checkExport :check if  the file exist download then delete it
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
-    public function checkExport()
+    public function downloadExcelExport()
     {
         if (Storage::disk('local')->has('users.xlsx')) 
         {

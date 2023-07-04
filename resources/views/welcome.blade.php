@@ -101,3 +101,26 @@
             });      
     </script> 
 
+<script type="text/javascript">
+ 
+    setInterval(checkExcelFile, 10000);
+    function checkExcelFile(){ 
+        $.ajax({
+               type:'GET',
+               url:"{{ route('AJAX-check-export') }}",             
+               success:function(response)
+                {
+                    if(response==="available")
+                    {
+                        //alert("download");
+                         window.location.href ="{{ route('download-excel-export') }}";                       
+                    } 
+                },
+                error: function(response) {
+                    }
+            });
+        }
+</script>
+
+    
+

@@ -11,14 +11,14 @@ use Illuminate\Http\Request;
 
 use Tests\TestCase;
 
-class QueryTest extends TestCase
+class MiddlewareTest extends TestCase
 {
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_makeQuery()
+    public function test_onOfIraninUser()
     {        
         $user = User::whereHas('attributes', function ($query) {
             $query->where('country', 'like', 'Iran');
@@ -29,6 +29,6 @@ class QueryTest extends TestCase
             ->first();
 
         $url = 'http://localhost/iranian-user/'.$user->id;
-        $this->assertStringContainsString("The user: Delphine Hudson with id:" . $user->id, $this->get($url)->getContent());
+        $this->assertStringContainsString("The user: ".$user->name ." with id:" . $user->id, $this->get($url)->getContent());
     }
 }
